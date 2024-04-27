@@ -137,7 +137,8 @@
                 };
                 originalContainer.appendChild(originalLine);
 
-                var translationLine = document.createElement('p');
+                var translationLine = document.createElement('div');
+                translationLine.classList.add('verse_tran');
                 translationLine.textContent = line.translation;
                 translationContainer.appendChild(translationLine);
             });
@@ -145,7 +146,7 @@
 
         function highlightLine(index) {
             var originals = document.querySelectorAll('#originalText .verse');
-            var translations = document.querySelectorAll('#translationText p');
+            var translations = document.querySelectorAll('#translationText div');
             
             originals.forEach(function(original) {
                 original.classList.remove('highlight');
