@@ -15,41 +15,39 @@
         .container {
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             height: 100%;
+            padding: 20px;
         }
         .poem-container {
-            margin: 20px;
-            padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 60%;
+            padding: 20px;
+            margin: 10px;
+            width: calc(50% - 40px);
         }
         .poem-title {
             font-size: 24px;
             color: #333;
             border-bottom: 2px solid #ddd;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             text-align: center;
         }
         .poem-author {
             font-size: 18px;
             color: #666;
-            margin-bottom: 20px;
             text-align: center;
         }
-        .poem-content {
-            font-size: 20px;
-            line-height: 1.6;
-            color: #333;
-        }
-        .verse {
-            margin-bottom: 10px;
+        .poem-content .verse {
+            margin-bottom: 8px;
+            padding: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
-        .translation-content {
-            padding-left: 40px;
-            background-color: white;
+        .translation-content p {
+            margin: 0;
+            padding: 5px;
+            transition: background-color 0.3s;
         }
         .highlight {
             background-color: #fff3b0; /* 淡黄色 */
@@ -58,52 +56,115 @@
 </head>
 <body>
     <div class="container">
-        <div class="poem-container">
+        <div class="poem-container" id="originalText">
             <div class="poem-title">将进酒</div>
             <div class="poem-author">李白</div>
-            <div class="poem-content" id="originalText">
-                <!-- 诗句将通过JavaScript动态生成 -->
-            </div>
+            <!-- 诗句将通过JavaScript动态生成 -->
         </div>
-        <div class="poem-container translation-content" id="translationText">
+        <div class="poem-container" id="translationText">
             <div class="poem-title">白话文翻译</div>
             <!-- 翻译将通过JavaScript动态生成 -->
         </div>
     </div>
 
     <script>
-        // 将进酒的诗句和翻译
         var poemLines = [
-            ["君不见，黄河之水天上来，奔流到海不复回。", "你难道没有看见，那黄河之水从天上奔腾而来，波涛翻滚直奔向东海，再也没有回来。"],
-            ["君不见，高堂明镜悲白发，朝如青丝暮成雪。", "你难道没有看见，那年迈的父母，对着明镜悲叹自己的白发，早上还是满头的青丝，到了晚上就变得如雪一般白。"],
-            // ... 添加更多诗句和翻译
-            ["五花马，千金裘，呼儿将出换美酒，与尔同销万古愁。", "五花马，价值千金的皮裘，叫侍儿拿去换美酒，让我们一起消散这无尽的忧愁。"]
-        ];
-        
-        // 填充诗句和翻译
-        var originalText = document.getElementById('originalText');
-        var translationText = document.getElementById('translationText');
-        poemLines.forEach(function(line, index) {
-            var originalLine = document.createElement('div');
-            originalLine.classList.add('verse');
-            originalLine.textContent = line[0];
-            originalLine.addEventListener('mouseenter', function() {
-                highlightTranslation(index);
-            });
-            originalText.appendChild(originalLine);
-
-            var translationLine = document.createElement('p');
-            translationLine.textContent = line[1];
-            translationText.appendChild(translationLine);
-        });
-
-        // 高亮显示对应的翻译
-        function highlightTranslation(index) {
-            var translations = translationText.children;
-            for (var i = 0; i < translations.length; i++) {
-                translations[i].classList.toggle('highlight', i === index);
+            {
+                original: "君不见，黄河之水天上来，奔流到海不复回。",
+                translation: "你难道没有看见，那黄河之水从天上奔腾而来，波涛翻滚直奔向东海，再也没有回来。"
+            },
+            {
+                original: "君不见，高堂明镜悲白发，朝如青丝暮成雪。",
+                translation: "你难道没有看见，高堂上明镜映照着悲凉的白发，早晨还是黑发如丝，到了傍晚却变得雪白。"
+            },
+            {
+                original: "人生得意须尽欢，莫使金樽空对月。",
+                translation: "人生得意之时应当尽情欢乐，不要让金杯空对着明月。"
+            },
+            {
+                original: "天生我材必有用，千金散尽还复来。",
+                translation: "既然天生我有这样的才能，必然有它的用处，即使千金耗尽也会再次获得。"
+            },
+            {
+                original: "烹羊宰牛且为乐，会须一饮三百杯。",
+                translation: "烹煮羊肉，宰杀牛犊，暂且以此作乐，应当畅饮三百杯。"
+            },
+            {
+                original: "岑夫子，丹丘生，将进酒，杯莫停。",
+                translation: "岑夫子啊，丹丘生啊，快把酒斟满，不要停下手中的酒杯。"
+            },
+            {
+                original: "与君歌一曲，请君为我倾耳听。",
+                translation: "为你唱一首歌，请你为我侧耳倾听。"
+            },
+            {
+                original: "钟鼓馔玉不足贵，但愿长醉不复醒。",
+                translation: "钟鸣鼎食的富贵不值得珍贵，但愿长久沉醉不再醒来。"
+            },
+            {
+                original: "古来圣贤皆寂寞，惟有饮者留其名。",
+                translation: "自古以来，圣贤们都是孤独寂寞的，只有那些畅饮的人才能留下名声。"
+            },
+            {
+                original: "陈王昔时宴平乐，斗酒十千恣欢谑。",
+                translation: "陈王昔日在平乐观大摆宴席，美酒斗量高达十千，尽情欢乐。"
+            },
+            {
+                original: "主人何为言少钱，径须沽取对君酌。",
+                translation: "主人为什么说钱少呢，只管买来酒来，对着你痛饮。"
+            },
+            {
+                original: "五花马，千金裘，呼儿将出换美酒，与尔同销万古愁。",
+                translation: "五花马，价值千金的皮裘，叫侍儿拿去换美酒，和你一起消解这万古的忧愁。"
             }
+        ];
+
+        function createPoemLines() {
+            var originalContainer = document.getElementById('originalText');
+            var translationContainer = document.getElementById('translationText');
+            poemLines.forEach(function(line, index) {
+                var originalLine = document.createElement('div');
+                originalLine.classList.add('verse');
+                originalLine.textContent = line.original;
+                originalLine.dataset.index = index; // 用于标识对应的翻译
+                originalLine.onmouseenter = function() {
+                    highlightLine(parseInt(this.dataset.index));
+                };
+                originalLine.onmouseleave = function() {
+                    resetHighlights();
+                };
+                originalContainer.appendChild(originalLine);
+
+                var translationLine = document.createElement('p');
+                translationLine.textContent = line.translation;
+                translationContainer.appendChild(translationLine);
+            });
         }
+
+        function highlightLine(index) {
+            var originals = document.querySelectorAll('#originalText .verse');
+            var translations = document.querySelectorAll('#translationText p');
+            
+            originals.forEach(function(original) {
+                original.classList.remove('highlight');
+            });
+            
+            translations.forEach(function(translation) {
+                translation.classList.remove('highlight');
+            });
+
+            originals[index].classList.add('highlight');
+            translations[index].classList.add('highlight');
+        }
+
+        function resetHighlights() {
+            var highlights = document.querySelectorAll('.highlight');
+            highlights.forEach(function(highlight) {
+                highlight.classList.remove('highlight');
+            });
+        }
+
+        createPoemLines(); // 生成诗句和翻译
     </script>
 </body>
 </html>
