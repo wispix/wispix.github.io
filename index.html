@@ -122,6 +122,7 @@
         function createPoemLines() {
             var originalContainer = document.getElementById('originalText');
             var translationContainer = document.getElementById('translationText');
+            originalContainer.style.lineHeight = '1.5';
             poemLines.forEach(function(line, index) {
                 var originalLine = document.createElement('div');
                 originalLine.classList.add('verse');
