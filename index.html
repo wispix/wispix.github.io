@@ -146,7 +146,7 @@
 
         function highlightLine(index) {
             var originals = document.querySelectorAll('#originalText .verse');
-            var translations = document.querySelectorAll('#translationText div');
+            var translations = document.querySelectorAll('#translationText .verse_tran');
             
             originals.forEach(function(original) {
                 original.classList.remove('highlight');
