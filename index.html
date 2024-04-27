@@ -17,6 +17,7 @@
         }
         .container {
             width: 80%;
+            max-width: 600px; /* 限制最大宽度 */
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -41,9 +42,11 @@
         }
         .verse {
             margin-bottom: 10px;
+            cursor: help; /* 改变鼠标悬停时的光标形状 */
         }
-        .verse:hover {
-            background-color: #f0f0f0;
+        .verse span {
+            display: inline-block;
+            margin-right: 5px;
         }
         .translation {
             margin-top: 30px;
@@ -58,10 +61,56 @@
         <div class="poem-title">将进酒</div>
         <div class="poem-author">李白</div>
         <div class="poem-content">
-            <div class="verse" title="你难道没有看见，那黄河之水从天上奔腾而来，波涛翻滚直奔向东海，再也没有回来。">君不见，黄河之水天上来，奔流到海不复回。</div>
-            <div class="verse" title="你难道没有看见，那年迈的父母，对着明镜悲叹自己的白发，早上还是满头的青丝，到了晚上就变得如雪一般白。">君不见，高堂明镜悲白发，朝如青丝暮成雪。</div>
-            <div class="verse" title="人生在世，得意之时就要尽情享受欢乐，不要让金杯空对着明月。">人生得意须尽欢，莫使金樽空对月。</div>
+            <div class="verse" title="你难道没有看见，那黄河之水从天上奔腾而来，波涛翻滚直奔向东海，再也没有回来。">
+                <span>君不见，黄河之水天上来，</span>
+                <span>奔流到海不复回。</span>
+            </div>
+            <div class="verse" title="你难道没有看见，那年迈的父母，对着明镜悲叹自己的白发，早上还是满头的青丝，到了晚上就变得如雪一般白。">
+                <span>君不见，高堂明镜悲白发，</span>
+                <span>朝如青丝暮成雪。</span>
+            </div>
+            <div class="verse" title="人生在世，得意之时就要尽情享受欢乐，不要让金杯空对着明月。">
+                <span>人生得意须尽欢，</span>
+                <span>莫使金樽空对月。</span>
+            </div>
             <!-- ... 更多的诗句和对应的翻译 ... -->
+            <div class="verse" title="天生我材必有用，千金散尽还复来。">
+                <span>天生我材必有用，</span>
+                <span>千金散尽还复来。</span>
+            </div>
+            <div class="verse" title="烹羊宰牛且为乐，会须一饮三百杯。">
+                <span>烹羊宰牛且为乐，</span>
+                <span>会须一饮三百杯。</span>
+            </div>
+            <div class="verse" title="岑夫子，丹丘生，将进酒，杯莫停。">
+                <span>岑夫子，丹丘生，</span>
+                <span>将进酒，杯莫停。</span>
+            </div>
+            <div class="verse" title="与君歌一曲，请君为我倾耳听。">
+                <span>与君歌一曲，</span>
+                <span>请君为我倾耳听。</span>
+            </div>
+            <div class="verse" title="钟鼓馔玉不足贵，但愿长醉不复醒。">
+                <span>钟鼓馔玉不足贵，</span>
+                <span>但愿长醉不复醒。</span>
+            </div>
+            <div class="verse" title="古来圣贤皆寂寞，惟有饮者留其名。">
+                <span>古来圣贤皆寂寞，</span>
+                <span>惟有饮者留其名。</span>
+            </div>
+            <div class="verse" title="陈王昔时宴平乐，斗酒十千恣欢谑。">
+                <span>陈王昔时宴平乐，</span>
+                <span>斗酒十千恣欢谑。</span>
+            </div>
+            <div class="verse" title="主人何为言少钱，径须沽取对君酌。">
+                <span>主人何为言少钱，</span>
+                <span>径须沽取对君酌。</span>
+            </div>
+            <div class="verse" title="五花马，千金裘，呼儿将出换美酒，与尔同销万古愁。">
+                <span>五花马，千金裘，</span>
+                <span>呼儿将出换美酒，</span>
+                <span>与尔同销万古愁。</span>
+            </div>
         </div>
         <div class="translation">
             <p>（此处为白话文翻译的段落，可以根据需要添加更多翻译内容。）</p>
