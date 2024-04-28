@@ -64,7 +64,7 @@
         </div>
         <div class="poem-container" id="translationText">
             <div class="poem-title">白话文翻译</div>
-            <div class="poem-author"></div>
+            <div class="poem-author">  </div>
             <!-- 翻译将通过JavaScript动态生成 -->
         </div>
     </div>
@@ -143,11 +143,6 @@
                 translationLine.classList.add('verse_tran');
                 translationLine.textContent = line.translation;
                 translationContainer.appendChild(translationLine);
-                
-                 // Add an empty space in translation container to maintain alignment
-                var authorSpace = document.createElement('div');
-                authorSpace.classList.add('poem-author');
-                translationContainer.appendChild(authorSpace);
             });
         }
 
