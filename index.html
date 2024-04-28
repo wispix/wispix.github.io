@@ -143,6 +143,11 @@
                 translationLine.classList.add('verse_tran');
                 translationLine.textContent = line.translation;
                 translationContainer.appendChild(translationLine);
+                
+                 // Add an empty space in translation container to maintain alignment
+                var authorSpace = document.createElement('div');
+                authorSpace.classList.add('poem-author');
+                translationContainer.appendChild(authorSpace);
             });
         }
 
