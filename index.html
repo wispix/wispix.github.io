@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <h1>Data Structures & Algorithms</h1>
+            <div class="dslist">
+                <ul>
+                    <li id="dsSqlist">顺 序 表</li>
+                    <li id="dschain">链 表</li>
+                    <li id="dsstack">栈 </li>
+                    <li id="dsqueue">队 列</li>
+                    <li id="dsstring">字 符 串</li>
+                    <li id="dsbitree">二 叉 树</li>
+                    <li id="dsgraph">图 </li>
+                    <li id="dssort">排 序</li>
+                </ul>
+            </div>
+        </div>
+        <div class="right-wrapper" id="sqlistWrapper">
+            <div class="operation">
+                <div class="btnbox">
+                    <button class="opbtn" id="listCreate">创建新顺序表</button>
+                    <button class="opbtn" id="listAdd">增加节点</button>
+                    <button class="opbtn" id="listDelete">删除节点</button>
+                    <button class="opbtn" id="listModify">修改结点</button>
+                    <button class="opbtn" id="listSearch">查找</button>
+                    <button class="opbtn" id="listClear">清空</button>
+                </div>
+                <div class="inputWrap">
+                </div>
+                <div class="noticeWrap"></div>
+            </div>
+            <div class="showPlace"></div>
+        </div>
+        <div class="right-wrapper" id="chainWrapper" style="display: none;">
+            <div class="operation">
+                <div class="chaintype">链表类型</div>
+                <div class="types-wrap" style="display: none;">
+                    <div id="singlechain">单链表</div>
+                    <div id="doublechain">双链表</div>
+                    <div id="circularsinglechain">循环单链表</div>
+                    <div id="circulardoublechain">循环双链表</div>
+                </div>
+                <div class="btnbox">
+                    <button class="opbtn" id="chaincreate">创建新链表</button>
+                    <button class="opbtn" id="chainadd">增加结点</button>
+                    <button class="opbtn" id="chaindelete">删除结点</button>
+                    <button class="opbtn" id="chainmodify">修改结点</button>
+                    <button class="opbtn" id="chainsearch">查找</button>
+                </div>
+                <div class="inputWrap">
+                    <label for="textinput">输入:</label>
+                    <input type="text" id="textinput">
+                </div>
+                <div class="noticeWrap"></div>
+            </div>
+            <div class="showPlace"></div>
+        </div>
+        <div class="right-wrapper" id="stackWrapper" style="display: none;">
+            <div class="operation">
+                <div class="btnbox">
+                    <button id="stackcreate">创建栈</button>
+                    <button id="stackpush">入栈</button>
+                    <button id="stackpop">出栈</button>
+                </div>
+            </div>
+            <div class="showPlace"> </div>
+        </div>
+        <div class="right-wrapper" id="queueWrapper" style="display: none;">
+            <div class="operation">
+                <div class="btnbox">
+                    <button id="queuecreate">创建队列</button>
+                    <button id="queuepush">入队</button>
+                    <button id="queuepop">出队</button>
+                </div>
+                <div class="inputWrap">
+                    <input type="text">
+                </div>
+                <div class="noticeWrap"></div>
+            </div>
+            <div class="showPlace"> </div>
+        </div>
+        <div class="right-wrapper" id="stringWrapper" style="display: none;">
+            <div class="operation">
+                <div class="btnbox">
+                    <button id="kmp">KMP算法</button>
+                </div>
+                <div class="inputWrap">
+                    <label for="Sstring">目标串</label>
+                    <input type="text" id="Sstring">
+                    <label for="Tstring">模式串</label>
+                    <input type="text" id="Tstring">
+                </div>
+                <div class="noticeWrap"></div>
+            </div>
+            <div class="showPlace"> </div>
+        </div>
+        <div class="right-wrapper" id="bitreeWrapper" style="display: none;">
+            <div class="operation">
+                <div class="btnbox">
+                    <button id="bitreeCreate">创建二叉树</button>
+                </div>
+                <div class="inputWrap">
+                    <input type="text">
+                </div>
+                <div class="noticeWrap"></div>
+            </div>
+            <div class="showPlace"> </div>
+        </div>
+        <div class="right-wrapper" id="graphWrapper" style="display: none;">
+            <div class="operation">
+                <div class="btnbox">
+                    <button id="graphcreate">创建图</button>
+                </div>
+                <div class="inputWrap">
+                    <input type="text">
+                </div>
+                <div class="noticeWrap"></div>
+            </div>
+            <div class="showPlace"> </div>
+        </div>
+        <div class="right-wrapper" id="sortWrapper" style="display: none;">
+            <div class="operation">
+                <div class="btnbox">
+                    <button id="insertsort">插入排序</button>
+                    <button id="bubblesort">冒泡排序</button>
+                    <button id="selectionsort">选择排序</button>
+                    <button id="quicksort">快速排序</button>
+                    <button id="mergesort">归并排序</button>
+                    <button id="heapsort">堆排序</button>
+                    <button id="shellsort">希尔排序</button>
+                    <button id="countingsort">计数排序</button>
+                    <button id="radixsort">基数排序</button>
+                </div>
+                <div class="inputWrap">
+                    <input type="text">
+                </div>
+                <div class="noticeWrap"></div>
+            </div>
+            <div class="showPlace"></div>
+        </div>
+    </div>
+    <div class="totop">
+        <svg t="1715522112685" class="totopIcon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4205" width="50" height="50">
+            <path d="M256 170.666667h512v85.333333H256z m213.333333 426.666666v256h85.333334v-256h213.333333l-256-256-256 256z" p-id="4206">
+            </path>
+        </svg>
+    </div>
+    <svg t="1715471695329" class="arrowIcon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4256" width="200" height="200">
+        <path d="M528.252661 950.942077l295.703769-289.705148c9.624195-9.380648 9.624195-24.707728 0-34.138518-9.576099-9.381671-25.222451-9.381671-34.848693 0L535.495622 875.592972 535.495622 88.901773c0-13.3214-11.048637-24.142863-24.642237-24.142863-13.597693 0-24.645306 10.821463-24.645306 24.142863l0 786.690176L232.574475 627.098411c-9.603729-9.381671-25.248034-9.381671-34.847669 0-4.836145 4.76349-7.194866 10.939143-7.194866 17.116843 0 6.1777 2.405793 12.355399 7.194866 17.116843l295.723212 289.704125c9.602705 9.383718 25.244964 9.383718 34.850739 0L528.252661 950.942077z" p-id="4257" fill="#f42954">
+        </path>
+    </svg>
+</body>
+<script src="js/main.js"></script>
+<script src="js/sqlist.js"></script>
+<script src="js/chain.js"></script>
+<script src="js/stack.js"></script>
+<script src="js/queue.js"></script>
+<script src="js/string.js"></script>
+<script src="js/bitree.js"></script>
+<script src="js/graph.js"></script>
+<script src="js/sort.js"></script>
+</html>
