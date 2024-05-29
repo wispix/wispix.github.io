@@ -162,7 +162,7 @@ class OperateSqlist extends Sqlist{
     }
     #addEventListnerToCreate(){
         // 1. 为按钮——创建新顺序表——添加事件监听
-        btnListCreate = this.buttonBox.querySelector("#listCreate")
+        let btnListCreate = this.buttonBox.querySelector("#listCreate")
         btnListCreate.addEventListener('click', () => {
             // 添加一个输入框用来输入顺序表长度
             this.inputPlace.innerHTML = '' // 清空输入区域
